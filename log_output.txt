@@ -1,0 +1,13 @@
+[limgahyun] Tue May 20 09:13:08 2025 +0900 chore: remove 개인코드, gihub df0a8a0
+[limgahyun] Tue May 20 09:11:19 2025 +0900 docs: 개인코드, github 추가 a372fdc
+[limgahyun] Tue May 20 09:09:47 2025 +0900 chore: remove images f6230cc
+[limgahyun] Tue May 20 07:39:56 2025 +0900 docs: communication diagrams 708e4e2
+[limgahyun] Tue May 20 05:31:21 2025 +0900 docs: usce case description - 시스템 종료 삭제 b08693f
+[limgahyun] Tue May 20 04:25:39 2025 +0900 docs: use case description 3217646
+[limgahyun] Tue May 20 04:19:34 2025 +0900 docs: use case description 1f999cb
+[limgahyun] Tue May 20 04:15:13 2025 +0900 docs: use case description-login ac1dc1f
+[limgahyun] Tue May 20 04:14:01 2025 +0900 docs: use case description-login 47b4318
+[limgahyun] Tue May 20 04:08:31 2025 +0900 docs: use case description-login 0d8e8f6
+[limgahyun] Tue May 20 03:25:41 2025 +0900 docs: requirement list 58dc034
+[limgahyun] Tue May 20 03:12:41 2025 +0900 feat: use case diagram ead3d0b
+[limgahyun] Mon May 19 21:54:02 2025 +0900 Initial commit d73c69b
