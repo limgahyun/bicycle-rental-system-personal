@@ -1,7 +1,3 @@
-## 개인코드 : 16897
-
-## GitHub 주소 : https://github.com/limgahyun/bicycle-rental-system-personal
-
 ## requirement list
 
 | No. | Requirement                                                                                   | Use Case              |
