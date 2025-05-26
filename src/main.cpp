@@ -5,6 +5,8 @@
 #include "LoginUI.h"
 #include "SignUpUI.h"
 #include "LogoutUI.h"
+#include "RentBikeUI.h"
+#include "RentBikeController.h"
 
 using namespace std;
 
@@ -16,7 +18,7 @@ using namespace std;
 // 함수 선언
 void initializeSystem(ifstream& inputFile, ofstream& outputFile);
 void cleanupSystem(ifstream& inputFile, ofstream& outputFile);
-void doTask(ifstream& inputFile, ofstream& outputFile, LoginUI* loginUI, SignUpUI* signUpUI, LogoutUI* logoutUI);
+void doTask(ifstream& inputFile, ofstream& outputFile, LoginUI* loginUI, SignUpUI* signUpUI, LogoutUI* logoutUI, RentBikeUI* rentBikeUI);
 
 int main() {
     // File 입출력을 위한 스트림
@@ -27,18 +29,24 @@ int main() {
     LoginUI* loginUI = new LoginUI(outputFile);
     SignUpUI* signUpUI = new SignUpUI(outputFile);
     LogoutUI* logoutUI = new LogoutUI(outputFile);
+    RentBikeUI* rentBikeUI = new RentBikeUI(outputFile);
 
     // 시스템 초기화
     initializeSystem(inputFile, outputFile);
 
+    // 테스트용 자전거 추가
+    RentBikeController::addBike(new Bike("BIKE001"));
+    RentBikeController::addBike(new Bike("BIKE002"));
+
     // 명령어 처리
-    doTask(inputFile, outputFile, loginUI, signUpUI, logoutUI);
+    doTask(inputFile, outputFile, loginUI, signUpUI, logoutUI, rentBikeUI);
 
     // 정리
     cleanupSystem(inputFile, outputFile);
     delete loginUI;
     delete signUpUI;
     delete logoutUI;
+    delete rentBikeUI;
 
     return 0;
 }
@@ -55,7 +63,7 @@ void cleanupSystem(ifstream& inputFile, ofstream& outputFile) {
     inputFile.close();
 }
 
-void doTask(ifstream& inputFile, ofstream& outputFile, LoginUI* loginUI, SignUpUI* signUpUI, LogoutUI* logoutUI) {
+void doTask(ifstream& inputFile, ofstream& outputFile, LoginUI* loginUI, SignUpUI* signUpUI, LogoutUI* logoutUI, RentBikeUI* rentBikeUI) {
     // 메뉴 파싱을 위한 level 구분을 위한 변수
     int menuLevel1 = 0, menuLevel2 = 0;
     string line, input;
@@ -99,6 +107,18 @@ void doTask(ifstream& inputFile, ofstream& outputFile, LoginUI* loginUI, SignUpU
                     case 2:   // "2.2. 로그아웃" 메뉴 부분
                     {
                         logoutUI->requestLogout();
+                        break;
+                    }
+                    default:
+                        break;
+                }
+                break;
+            }
+            case 4: {
+                switch(menuLevel2) {
+                    case 1:   // "4.1. 자전거 대여" 메뉴 부분
+                    {
+                        rentBikeUI->requestRental(input);
                         break;
                     }
                     default:
