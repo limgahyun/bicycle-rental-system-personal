@@ -9,7 +9,7 @@ using namespace std;
 
 /*
     class: LoginUI
-    description: 로그인 UI 클래스
+    description: 로그인 boundary 클래스
 */
 class LoginUI {
 private:

@@ -9,7 +9,7 @@ using namespace std;
 
 /*
     class: LogoutUI
-    description: 로그아웃 UI를 위한 boundary 클래스
+    description: 로그아웃 boundary 클래스
 */
 class LogoutUI {
 private:
@@ -17,7 +17,7 @@ private:
     ofstream& outputFile;
 
 public:
-    LogoutUI(ofstream& outFile);
+    LogoutUI(ofstream& outputFile);
     void requestLogout();
 };
 
