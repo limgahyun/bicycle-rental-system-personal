@@ -9,7 +9,7 @@ using namespace std;
 
 /*
     class: UserCollection
-    description: 사용자 관리를 위한 collection 클래스
+    description: 사용자 관리를 위한 entity 클래스
 */
 class UserCollection {
 private:
@@ -18,23 +18,22 @@ private:
     User* currentUser;
     User adminUser;
 
-    // Private constructor for singleton
     UserCollection();
 
 public:
     static UserCollection* getInstance();
     
-    // User management
+    // 멤버 관리
     void addMember(Member* member);
     Member* findMemberById(const string& id);
     const vector<Member*>& getMembers() const;
     
-    // Login/Logout management
+    // 로그인/로그아웃 관리
     bool login(const string& id, const string& password);
     void logout();
     User* getCurrentUser() const;
     
-    // Destructor
+    // 소멸자
     ~UserCollection();
 };
 
