@@ -21,8 +21,8 @@ void LogoutUI::requestLogout() {
 
     outputFile << "2.2. 로그아웃" << endl;
     if (!userId.empty()) {
-        outputFile << "> " << userId << endl;
+        outputFile << "> " << userId << endl << endl;
     } else {
-        outputFile << "> " << "logout failed" << endl;
+        outputFile << "> " << "logout failed" << endl << endl;
     }
 } 

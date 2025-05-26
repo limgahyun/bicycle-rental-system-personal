@@ -8,6 +8,7 @@
 #include "RentBikeUI.h"
 #include "RegisterBikeUI.h"
 #include "GetRentalInfoUI.h"
+#include "ExitUI.h"
 #include "RentBikeController.h"
 
 using namespace std;
@@ -21,7 +22,7 @@ using namespace std;
 void initializeSystem(ifstream& inputFile, ofstream& outputFile);
 void cleanupSystem(ifstream& inputFile, ofstream& outputFile);
 void doTask(ifstream& inputFile, ofstream& outputFile, LoginUI* loginUI, SignUpUI* signUpUI, LogoutUI* logoutUI, 
-            RentBikeUI* rentBikeUI, RegisterBikeUI* registerBikeUI, GetRentalInfoUI* getRentalInfoUI);
+            RentBikeUI* rentBikeUI, RegisterBikeUI* registerBikeUI, GetRentalInfoUI* getRentalInfoUI, ExitUI* exitUI);
 
 int main() {
     // File 입출력을 위한 스트림
@@ -35,12 +36,13 @@ int main() {
     RentBikeUI* rentBikeUI = new RentBikeUI(outputFile);
     RegisterBikeUI* registerBikeUI = new RegisterBikeUI(outputFile);
     GetRentalInfoUI* getRentalInfoUI = new GetRentalInfoUI(outputFile);
+    ExitUI* exitUI = new ExitUI(outputFile);
 
     // 시스템 초기화
     initializeSystem(inputFile, outputFile);
 
     // 명령어 처리
-    doTask(inputFile, outputFile, loginUI, signUpUI, logoutUI, rentBikeUI, registerBikeUI, getRentalInfoUI);
+    doTask(inputFile, outputFile, loginUI, signUpUI, logoutUI, rentBikeUI, registerBikeUI, getRentalInfoUI, exitUI);
 
     // 정리
     cleanupSystem(inputFile, outputFile);
@@ -50,6 +52,7 @@ int main() {
     delete rentBikeUI;
     delete registerBikeUI;
     delete getRentalInfoUI;
+    delete exitUI;
 
     return 0;
 }
@@ -67,7 +70,7 @@ void cleanupSystem(ifstream& inputFile, ofstream& outputFile) {
 }
 
 void doTask(ifstream& inputFile, ofstream& outputFile, LoginUI* loginUI, SignUpUI* signUpUI, LogoutUI* logoutUI, 
-            RentBikeUI* rentBikeUI, RegisterBikeUI* registerBikeUI, GetRentalInfoUI* getRentalInfoUI) {
+            RentBikeUI* rentBikeUI, RegisterBikeUI* registerBikeUI, GetRentalInfoUI* getRentalInfoUI, ExitUI* exitUI) {
     // 메뉴 파싱을 위한 level 구분을 위한 변수
     int menuLevel1 = 0, menuLevel2 = 0;
     string line, input;
@@ -158,6 +161,7 @@ void doTask(ifstream& inputFile, ofstream& outputFile, LoginUI* loginUI, SignUpU
                 switch(menuLevel2) {
                     case 1:   // "6.1. 종료" 메뉴 부분
                     {
+                        exitUI->requestExit();
                         isProgramExit = 1;
                         break;
                     }

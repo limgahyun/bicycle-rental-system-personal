@@ -14,8 +14,8 @@ void SignUpUI::requestSignUp(string input) {
 
     if (!signUpController->isDuplicated(id)) {
         signUpController->addNewMember(id, password, phoneNumber);
-        outputFile << "> " << id << " " << password << " " << phoneNumber << endl;
+        outputFile << "> " << id << " " << password << " " << phoneNumber << endl << endl;
     } else {
-        outputFile << "> " << "signup failed" << endl;
+        outputFile << "> " << "signup failed" << endl << endl;
     }
 } 

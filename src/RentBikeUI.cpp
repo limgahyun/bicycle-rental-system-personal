@@ -23,8 +23,8 @@ void RentBikeUI::requestRental(string input) {
 
     if (rentBikeController->rentBike(bikeId)) {
         Bike* bike = RentBikeController::findBikeById(bikeId);
-        outputFile << "> " << bike->getBikeId() << " " << bike->getBikeName() << endl;
+        outputFile << "> " << bike->getBikeId() << " " << bike->getBikeName() << endl << endl;
     } else {
-        outputFile << "> " << "자전거 대여 실패" << endl;
+        outputFile << "> " << "자전거 대여 실패" << endl << endl;
     }
 } 

@@ -22,8 +22,8 @@ void RegisterBikeUI::requestRegisterBike(string input) {
     outputFile << "3.1. 자전거 등록" << endl;
 
     if (registerBikeController->registerBike(bikeId, bikeName)) {
-        outputFile << "> " << bikeId << " " << bikeName << endl;
+        outputFile << "> " << bikeId << " " << bikeName << endl << endl;
     } else {
-        outputFile << "> " << "register failed" << endl;
+        outputFile << "> " << "register failed" << endl << endl;
     }
 } 

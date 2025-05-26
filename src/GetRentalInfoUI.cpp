@@ -17,11 +17,11 @@ void GetRentalInfoUI::requestRentalInfoList() {
     outputFile << "5.1. 자전거 대여 리스트" << endl;
     
     if (rentedBikes.empty()) {
-        outputFile << "> 대여 자전거 정보 조회에 실패하였습니다." << endl;
+        outputFile << "> 대여 자전거 정보 조회에 실패하였습니다." << endl << endl;
         return;
     }
 
     for (const Bike* bike : rentedBikes) {
-        outputFile << "> " << bike->getBikeId() << " " << bike->getBikeName() << endl;
+        outputFile << "> " << bike->getBikeId() << " " << bike->getBikeName() << endl << endl;
     }
 } 
