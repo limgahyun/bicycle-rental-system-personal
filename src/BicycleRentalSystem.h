@@ -17,8 +17,8 @@ using namespace std;
 
 class BicycleRentalSystem {
 private:
-    ifstream in_fp;
-    ofstream out_fp;
+    ifstream inputFile;
+    ofstream outputFile;
     LoginUI* loginUI;
     SignUpUI* signUpUI;
 

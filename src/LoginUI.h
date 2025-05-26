@@ -11,10 +11,10 @@ using namespace std;
 class LoginUI {
 private:
     LoginController* loginController;
-    ofstream& out_fp;
+    ofstream& outputFile;
 
 public:
-    LoginUI(ofstream& out_fp);
+    LoginUI(ofstream& outputFile);
     void requestLogin(string input);
 };
 

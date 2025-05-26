@@ -3,7 +3,7 @@
 #include <string>
 #include <sstream>
 
-LoginUI::LoginUI(std::ofstream& out_fp) : out_fp(out_fp) {
+LoginUI::LoginUI(std::ofstream& outputFile) : outputFile(outputFile) {
     loginController = new LoginController();
 }
 
@@ -25,10 +25,10 @@ void LoginUI::requestLogin(std::string input) {
     password = (password[0] == '[') ? password.substr(1, password.length()-2) : password;
 
     if (loginController->login(id, password)) {
-        out_fp << "2.1. 로그인" << std::endl;
-        out_fp << "> " << id << password << std::endl;
+        outputFile << "2.1. 로그인" << std::endl;
+        outputFile << "> " << id << password << std::endl;
     } else {
-        out_fp << "2.1. 로그인" << std::endl;
-        out_fp << "> " << "login failed" << std::endl;
+        outputFile << "2.1. 로그인" << std::endl;
+        outputFile << "> " << "login failed" << std::endl;
     }
 }

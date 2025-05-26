@@ -1,7 +1,7 @@
 #include "SignUpUI.h"
 #include <sstream>
 
-SignUpUI::SignUpUI(ofstream& out_fp) : out_fp(out_fp) {
+SignUpUI::SignUpUI(ofstream& outputFile) : outputFile(outputFile) {
     signUpController = new SignUpController();
 }
 
@@ -19,10 +19,10 @@ void SignUpUI::requestSignUp(string input) {
 
     if (!signUpController->isDuplicated(id)) {
         signUpController->addNewMember(id, password, phoneNumber);
-        out_fp << "1.1. 회원가입" << endl;
-        out_fp << "> " << id << " " << password << " " << phoneNumber << endl;
+        outputFile << "1.1. 회원가입" << endl;
+        outputFile << "> " << id << " " << password << " " << phoneNumber << endl;
     } else {
-        out_fp << "1.1. 회원가입" << endl;
-        out_fp << "> " << "Error: ID already exists" << endl;
+        outputFile << "1.1. 회원가입" << endl;
+        outputFile << "> " << "Error: ID already exists" << endl;
     }
 } 

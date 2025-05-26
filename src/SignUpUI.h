@@ -10,10 +10,10 @@ using namespace std;
 class SignUpUI {
 private:
     SignUpController* signUpController;
-    ofstream& out_fp;
+    ofstream& outputFile;
 
 public:
-    SignUpUI(ofstream& out_fp);
+    SignUpUI(ofstream& outputFile);
     void requestSignUp(string input);
 };
 
