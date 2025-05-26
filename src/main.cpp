@@ -15,24 +15,22 @@ using namespace std;
 // 함수 선언
 void initializeSystem(ifstream& inputFile, ofstream& outputFile);
 void cleanupSystem(ifstream& inputFile, ofstream& outputFile);
-void doTask(ifstream& inputFile, ofstream& outputFile);
+void doTask(ifstream& inputFile, ofstream& outputFile, LoginUI& loginUI, SignUpUI& signUpUI);
 
 int main() {
-    // File 입출력을 위한 스트림
+    // 변수 선언
     ifstream inputFile;
     ofstream outputFile;
-    
-    // UI 객체
     LoginUI loginUI(outputFile);
     SignUpUI signUpUI(outputFile);
 
-    // 시스템 초기화
+    // 파일 입출력을 위한 초기화
     initializeSystem(inputFile, outputFile);
 
     // 명령어 처리
-    doTask(inputFile, outputFile);
+    doTask(inputFile, outputFile, loginUI, signUpUI);
 
-    // 정리
+    // 파일 정리
     cleanupSystem(inputFile, outputFile);
 
     return 0;
@@ -50,7 +48,7 @@ void cleanupSystem(ifstream& inputFile, ofstream& outputFile) {
     inputFile.close();
 }
 
-void doTask(ifstream& inputFile, ofstream& outputFile) {
+void doTask(ifstream& inputFile, ofstream& outputFile, LoginUI& loginUI, SignUpUI& signUpUI) {
     // 메뉴 파싱을 위한 level 구분을 위한 변수
     int menuLevel1 = 0, menuLevel2 = 0;
     string line, input;
@@ -76,7 +74,7 @@ void doTask(ifstream& inputFile, ofstream& outputFile) {
                 switch(menuLevel2) {
                     case 1:   // "1.1. 회원가입" 메뉴 부분
                     {
-                        signUpUI->requestSignUp(input);
+                        signUpUI.requestSignUp(input);
                         break;
                     }
                     default:
@@ -88,7 +86,7 @@ void doTask(ifstream& inputFile, ofstream& outputFile) {
                 switch(menuLevel2) {
                     case 1:   // "2.1. 로그인" 메뉴 부분
                     {
-                        loginUI->requestLogin(input);
+                        loginUI.requestLogin(input);
                         break;
                     }
                     case 2:   // "2.2. 로그아웃" 메뉴 부분
@@ -101,9 +99,9 @@ void doTask(ifstream& inputFile, ofstream& outputFile) {
                 }
                 break;
             }
-            case 7: {
+            case 6: {
                 switch(menuLevel2) {
-                    case 1:   // "7.1. 종료" 메뉴 부분
+                    case 1:   // "6.1. 종료" 메뉴 부분
                     {
                         isProgramExit = 1;
                         break;
