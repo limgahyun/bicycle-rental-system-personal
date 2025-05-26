@@ -7,6 +7,7 @@
 #include "LogoutUI.h"
 #include "RentBikeUI.h"
 #include "RegisterBikeUI.h"
+#include "GetRentalInfoUI.h"
 #include "RentBikeController.h"
 
 using namespace std;
@@ -19,7 +20,8 @@ using namespace std;
 // 함수 선언
 void initializeSystem(ifstream& inputFile, ofstream& outputFile);
 void cleanupSystem(ifstream& inputFile, ofstream& outputFile);
-void doTask(ifstream& inputFile, ofstream& outputFile, LoginUI* loginUI, SignUpUI* signUpUI, LogoutUI* logoutUI, RentBikeUI* rentBikeUI, RegisterBikeUI* registerBikeUI);
+void doTask(ifstream& inputFile, ofstream& outputFile, LoginUI* loginUI, SignUpUI* signUpUI, LogoutUI* logoutUI, 
+            RentBikeUI* rentBikeUI, RegisterBikeUI* registerBikeUI, GetRentalInfoUI* getRentalInfoUI);
 
 int main() {
     // File 입출력을 위한 스트림
@@ -32,12 +34,13 @@ int main() {
     LogoutUI* logoutUI = new LogoutUI(outputFile);
     RentBikeUI* rentBikeUI = new RentBikeUI(outputFile);
     RegisterBikeUI* registerBikeUI = new RegisterBikeUI(outputFile);
+    GetRentalInfoUI* getRentalInfoUI = new GetRentalInfoUI(outputFile);
 
     // 시스템 초기화
     initializeSystem(inputFile, outputFile);
 
     // 명령어 처리
-    doTask(inputFile, outputFile, loginUI, signUpUI, logoutUI, rentBikeUI, registerBikeUI);
+    doTask(inputFile, outputFile, loginUI, signUpUI, logoutUI, rentBikeUI, registerBikeUI, getRentalInfoUI);
 
     // 정리
     cleanupSystem(inputFile, outputFile);
@@ -46,6 +49,7 @@ int main() {
     delete logoutUI;
     delete rentBikeUI;
     delete registerBikeUI;
+    delete getRentalInfoUI;
 
     return 0;
 }
@@ -62,7 +66,8 @@ void cleanupSystem(ifstream& inputFile, ofstream& outputFile) {
     inputFile.close();
 }
 
-void doTask(ifstream& inputFile, ofstream& outputFile, LoginUI* loginUI, SignUpUI* signUpUI, LogoutUI* logoutUI, RentBikeUI* rentBikeUI, RegisterBikeUI* registerBikeUI) {
+void doTask(ifstream& inputFile, ofstream& outputFile, LoginUI* loginUI, SignUpUI* signUpUI, LogoutUI* logoutUI, 
+            RentBikeUI* rentBikeUI, RegisterBikeUI* registerBikeUI, GetRentalInfoUI* getRentalInfoUI) {
     // 메뉴 파싱을 위한 level 구분을 위한 변수
     int menuLevel1 = 0, menuLevel2 = 0;
     string line, input;
@@ -137,9 +142,21 @@ void doTask(ifstream& inputFile, ofstream& outputFile, LoginUI* loginUI, SignUpU
                 }
                 break;
             }
-            case 7: {
+            case 5: {
                 switch(menuLevel2) {
-                    case 1:   // "7.1. 종료" 메뉴 부분
+                    case 1:   // "5.1. 자전거 대여 리스트" 메뉴 부분
+                    {
+                        getRentalInfoUI->requestRentalInfoList();
+                        break;
+                    }
+                    default:
+                        break;
+                }
+                break;
+            }
+            case 6: {
+                switch(menuLevel2) {
+                    case 1:   // "6.1. 종료" 메뉴 부분
                     {
                         isProgramExit = 1;
                         break;
