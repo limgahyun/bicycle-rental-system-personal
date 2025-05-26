@@ -12,13 +12,15 @@ using namespace std;
 class Bike {
 private:
     string bikeId;
+    string bikeName;
     bool isRented;
 
 public:
-    Bike(string id);
+    Bike(string id, string name);
     bool isRentalAvailable() const;
     void rent();
     string getBikeId() const { return bikeId; }
+    string getBikeName() const { return bikeName; }
     bool getIsRented() const { return isRented; }
 };
 

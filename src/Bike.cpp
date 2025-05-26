@@ -1,6 +1,6 @@
 #include "Bike.h"
 
-Bike::Bike(string id) : bikeId(id), isRented(false) {}
+Bike::Bike(string id, string name) : bikeId(id), bikeName(name), isRented(false) {}
 
 /*
     함수 이름 : Bike::isRentalAvailable()

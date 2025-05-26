@@ -13,17 +13,18 @@ RentBikeUI::RentBikeUI(ofstream& outFile) : outputFile(outFile) {
     반환값    : 없음
 */
 void RentBikeUI::requestRental(string input) {
-    std::string bikeId, bikeName;
-    std::istringstream iss(input);
+    string bikeId;
+    istringstream iss(input);
     
-    // id, password 추출하기
-    iss >> bikeId >> bikeName;
+    // 자전거 ID 추출
+    iss >> bikeId;
 
     outputFile << "4.1. 자전거 대여" << endl;
 
     if (rentBikeController->rentBike(bikeId)) {
-        outputFile << "> " << bikeId << bikeName << endl;
+        Bike* bike = RentBikeController::findBikeById(bikeId);
+        outputFile << "> " << bike->getBikeId() << " " << bike->getBikeName() << endl;
     } else {
-        outputFile << "> " << "자전거 대여 실패 " << endl;
+        outputFile << "> " << "자전거 대여 실패" << endl;
     }
 } 
