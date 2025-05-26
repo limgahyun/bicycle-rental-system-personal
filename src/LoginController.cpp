@@ -1,16 +1,13 @@
 #include "LoginController.h"
+#include "SignUpController.h"
 #include <vector>
 
 using namespace std;
 
-static vector<User> users;
+static User user;
 
-LoginController::LoginController() : currentUser(nullptr) {
-    if (users.empty()) {
-        users.push_back(User("user1", "pass1"));
-        users.push_back(User("user2", "pass2"));
-    }
-}
+LoginController::LoginController() : currentUser(nullptr), adminUser("admin", "admin") {}
+
 
 /*
 	함수 이름 : LoginController::login()
@@ -19,14 +16,21 @@ LoginController::LoginController() : currentUser(nullptr) {
 	반환값    : 로그인 성공 여부
 */
 bool LoginController::login(string id, string password) {
-    for (auto& user : users) {
-        if (user.findUserById(id)) {
-            if (user.checkPassword(password)) {
-                user.setLoggedIn(true);
-                currentUser = &user;
-                return true;
-            }
-            return false;
+   // 1. Admin 검사
+    if (adminUser.findUserById(id) && adminUser.checkPassword(password)) {
+        adminUser.setLoggedIn(true);
+        currentUser = &adminUser;
+        return true;
+    }
+
+    // 2. Member 목록에서 검사
+    const auto& members = SignUpController::getMembers();
+    for (const auto& member : members) {
+        if (member.findUserById(id) && member.checkPassword(password)) {
+            // 주의: 복사를 위해 new 사용
+            currentUser = new Member(member);  
+            currentUser->setLoggedIn(true);
+            return true;
         }
     }
     return false;

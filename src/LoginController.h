@@ -13,6 +13,7 @@ using namespace std;
 class LoginController {
 private:
     User* currentUser;
+    User adminUser;
 
 public:
     LoginController();

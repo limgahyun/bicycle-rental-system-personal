@@ -13,7 +13,6 @@ private:
     User* currentUser;
 
 public:
-    LogoutController();
     string logout();
 };
 

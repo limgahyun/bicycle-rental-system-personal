@@ -19,7 +19,7 @@ public:
     SignUpController();
     bool isDuplicated(string id);
     void addNewMember(string id, string password, string phoneNumber);
-    static vector<Member>& getMembers() { return members; }
+    static const vector<Member>& getMembers();
 };
 
 #endif 
