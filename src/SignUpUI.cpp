@@ -1,16 +1,14 @@
 #include "SignUpUI.h"
 #include <sstream>
 
-SignUpUI::SignUpUI(ofstream& outputFile) : outputFile(outputFile) {
-    signUpController = new SignUpController();
-}
+SignUpUI::SignUpUI(ofstream& outFile) : outputFile(outFile) {}
 
 void SignUpUI::requestSignUp(string input) {
     string id, password, phoneNumber;
-    istringstream iss(input);
+    istringstream inputStringStream(input);
     
     // id, password, phoneNumber 추출
-    iss >> id >> password >> phoneNumber;
+    inputStringStream >> id >> password >> phoneNumber;
 
     if (!signUpController->isDuplicated(id)) {
         signUpController->addNewMember(id, password, phoneNumber);

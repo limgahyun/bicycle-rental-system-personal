@@ -15,7 +15,7 @@ using namespace std;
 // 함수 선언
 void initializeSystem(ifstream& inputFile, ofstream& outputFile);
 void cleanupSystem(ifstream& inputFile, ofstream& outputFile);
-void doTask(ifstream& inputFile, ofstream& outputFile, LoginUI* loginUI, SignUpUI* signUpUI);
+void doTask(ifstream& inputFile, ofstream& outputFile);
 
 int main() {
     // File 입출력을 위한 스트림
@@ -23,19 +23,17 @@ int main() {
     ofstream outputFile;
     
     // UI 객체
-    LoginUI* loginUI = new LoginUI(outputFile);
-    SignUpUI* signUpUI = new SignUpUI(outputFile);
+    LoginUI loginUI(outputFile);
+    SignUpUI signUpUI(outputFile);
 
     // 시스템 초기화
     initializeSystem(inputFile, outputFile);
 
     // 명령어 처리
-    doTask(inputFile, outputFile, loginUI, signUpUI);
+    doTask(inputFile, outputFile);
 
     // 정리
     cleanupSystem(inputFile, outputFile);
-    delete loginUI;
-    delete signUpUI;
 
     return 0;
 }
@@ -52,7 +50,7 @@ void cleanupSystem(ifstream& inputFile, ofstream& outputFile) {
     inputFile.close();
 }
 
-void doTask(ifstream& inputFile, ofstream& outputFile, LoginUI* loginUI, SignUpUI* signUpUI) {
+void doTask(ifstream& inputFile, ofstream& outputFile) {
     // 메뉴 파싱을 위한 level 구분을 위한 변수
     int menuLevel1 = 0, menuLevel2 = 0;
     string line, input;

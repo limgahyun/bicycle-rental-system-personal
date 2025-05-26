@@ -2,16 +2,11 @@ CXX = g++
 CXXFLAGS = -std=c++14
 
 SRCS = src/main.cpp \
-       src/BicycleRentalSystem.cpp \
        src/LoginUI.cpp \
-       src/LoginController.cpp \
-       src/SignUpUI.cpp \
-       src/SignUpController.cpp \
-       src/User.cpp \
-       src/Member.cpp
+       src/SignUpUI.cpp
 
 OBJS = $(SRCS:.cpp=.o)
-TARGET = bicycle_rental_system
+TARGET = bicycle_rental
 
 $(TARGET): $(OBJS)
 	$(CXX) $(OBJS) -o $(TARGET)
