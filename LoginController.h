@@ -14,7 +14,6 @@ private:
 public:
     LoginController();
     bool login(string id, string password);
-    void logout();
     User* getCurrentUser() const;
 };
 
