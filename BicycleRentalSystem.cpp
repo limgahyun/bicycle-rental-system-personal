@@ -6,6 +6,7 @@
 #include <string>
 #include <sstream>
 #include "LoginUI.h"
+#include "SignUpUI.h"
 
 using namespace std;
 
@@ -19,6 +20,7 @@ private:
     ifstream in_fp;
     ofstream out_fp;
     LoginUI* loginUI;
+    SignUpUI* signUpUI;
 
     void initializeSystem() {
         // 파일 입출력을 위한 초기화
@@ -27,12 +29,16 @@ private:
         
         // UI 객체 초기화
         loginUI = new LoginUI(out_fp);
+        signUpUI = new SignUpUI(out_fp);
     }
 
     void cleanupSystem() {
         // UI 객체 정리
         if (loginUI != nullptr) {
             delete loginUI;
+        }
+        if (signUpUI != nullptr) {
+            delete signUpUI;
         }
         
         // 파일 정리
@@ -62,14 +68,11 @@ private:
             
             // 메뉴 구분 및 해당 연산 수행
             switch(menu_level_1) {
-                case 1:
-                {
-                    switch(menu_level_2)
-                    {
+                case 1: {
+                    switch(menu_level_2) {
                         case 1:   // "1.1. 회원가입" 메뉴 부분
                         {
-                            // 해당 기능 수행 
-                            // join();
+                            signUpUI->requestSignUp(input);
                             break;
                         }
                         default:
@@ -77,13 +80,11 @@ private:
                     }
                     break;
                 }
-                case 2:
-                {
-                    switch(menu_level_2)
-                    {
+                case 2: {
+                    switch(menu_level_2) {
                         case 1:   // "2.1. 로그인" 메뉴 부분
                         {
-                            loginUI->requestLogin(input); // loginUI에게 로그인 요청
+                            loginUI->requestLogin(input);
                             break;
                         }
                         case 2:   // "2.2. 로그아웃" 메뉴 부분
@@ -138,14 +139,11 @@ private:
                     }
                     break;
                 }
-                case 6:
-                {
-                    switch(menu_level_2)
-                    {
-                        case 1:   // "6.1. 종료" 메뉴 부분
+                case 7: {
+                    switch(menu_level_2) {
+                        case 1:   // "7.1. 종료" 메뉴 부분
                         {
                             is_program_exit = 1;
-                            // 해당 기능 수행 
                             break;
                         }
                         default:

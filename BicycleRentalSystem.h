@@ -6,6 +6,7 @@
 #include <string>
 #include <sstream>
 #include "LoginUI.h"
+#include "SignUpUI.h"
 
 using namespace std;
 
@@ -19,6 +20,7 @@ private:
     ifstream in_fp;
     ofstream out_fp;
     LoginUI* loginUI;
+    SignUpUI* signUpUI;
 
     void initializeSystem();
     void cleanupSystem();

@@ -12,7 +12,7 @@ User::User(string id, string password) : userId(id), password(password), userRol
 	전달 인자 : id
 	반환값    : 해당 id를 가진 user 찾기 성공 여부
 */
-bool User::findUserById(string searchId) {
+bool User::findUserById(string searchId) const {
     return this->userId == searchId;
 }
 
@@ -22,7 +22,7 @@ bool User::findUserById(string searchId) {
 	전달 인자 : password
 	반환값    : 해당 password가 일치하는지 여부
 */
-bool User::checkPassword(string inputPassword) {
+bool User::checkPassword(string inputPassword) const {
     return this->password == inputPassword;
 }
 
