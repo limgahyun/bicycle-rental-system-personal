@@ -18,7 +18,7 @@ bool RentBikeController::rentBike(string bikeId) {
     Bike* bike = findBikeById(bikeId);
 
     // 자전거 대여 가능 여부 확인
-    if ((currentUser == nullptr) || (bike == nullptr) || (isRentalAvailable(bikeId))) {
+    if ((currentUser == nullptr) || (bike == nullptr) || (!isRentalAvailable(bikeId))) {
         return false;
     }
     

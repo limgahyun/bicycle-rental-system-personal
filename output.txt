@@ -11,6 +11,6 @@
 2.1. 로그인
 > kim pwdpwd
 4.1. 자전거 대여
-> 자전거 대여 실패
+> b2 bikeProducer
 4.1. 자전거 대여
-> 자전거 대여 실패
+> b1 bikeMaker
