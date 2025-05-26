@@ -1,8 +1,8 @@
 #ifndef MEMBER_H
 #define MEMBER_H
 
-#include "User.h"
 #include <string>
+#include "User.h"
 
 using namespace std;
 
