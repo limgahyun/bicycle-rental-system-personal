@@ -20,11 +20,11 @@ void LoginUI::requestLogin(std::string input) {
     // id, password 추출하기
     iss >> id >> password;
 
+    outputFile << "2.1. 로그인" << std::endl;
+
     if (loginController->login(id, password)) {
-        outputFile << "2.1. 로그인" << std::endl;
         outputFile << "> " << id << " " << password << std::endl;
     } else {
-        outputFile << "2.1. 로그인" << std::endl;
         outputFile << "> " << "login failed" << std::endl;
     }
 }

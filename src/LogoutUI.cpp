@@ -18,11 +18,11 @@ LogoutUI::LogoutUI(ofstream& outFile) : outputFile(outFile) {
 */
 void LogoutUI::requestLogout() {
     string userId = logoutController->logout();
+
+    outputFile << "2.2. 로그아웃" << endl;
     if (!userId.empty()) {
-        outputFile << "2.2. 로그아웃" << endl;
         outputFile << "> " << userId << endl;
     } else {
-        outputFile << "2.2. 로그아웃" << endl;
         outputFile << "> " << "logout failed" << endl;
     }
 } 
