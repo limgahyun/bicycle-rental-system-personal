@@ -5,15 +5,17 @@
 #include <fstream>
 #include "LoginController.h"
 
+using namespace std;
+
 // LoginUI boundary class 선언
 class LoginUI {
 private:
     LoginController* loginController;
-    std::ofstream& out_fp;
+    ofstream& out_fp;
 
 public:
-    LoginUI(std::ofstream& out_fp);
-    void requestLogin(std::string input);
+    LoginUI(ofstream& out_fp);
+    void requestLogin(string input);
 };
 
 #endif

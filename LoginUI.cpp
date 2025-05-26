@@ -9,7 +9,7 @@ LoginUI::LoginUI(std::ofstream& out_fp) : out_fp(out_fp) {
 
 /*
 	함수 이름 : LoginUI::requestLogin(std::string input)
-	기능	  : id와 password를 추출하고, loginController에게 전달하여 로그인 여부를 확인한 후 결과 출력
+	기능	 : id와 password를 추출하고, loginController에게 전달하여 로그인 여부를 확인한 후 결과 출력
 	전달 인자 : 입력 문자열
 	반환값    : 없음
 */

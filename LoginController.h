@@ -4,6 +4,8 @@
 #include <string>
 #include "User.h"
 
+using namespace std;
+
 // LoginController control class 선언
 class LoginController {
 private:
@@ -11,7 +13,7 @@ private:
 
 public:
     LoginController();
-    bool login(std::string id, std::string password);
+    bool login(string id, string password);
     void logout();
     User* getCurrentUser() const;
 };
