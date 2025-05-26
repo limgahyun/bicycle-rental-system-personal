@@ -19,10 +19,6 @@ void LoginUI::requestLogin(std::string input) {
     
     // id, password 추출하기
     iss >> id >> password;
-    
-    // [] 제거하기
-    id = (id[0] == '[') ? id.substr(1, id.length()-2) : id;
-    password = (password[0] == '[') ? password.substr(1, password.length()-2) : password;
 
     if (loginController->login(id, password)) {
         outputFile << "2.1. 로그인" << std::endl;
