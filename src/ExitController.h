@@ -1,10 +1,7 @@
 #ifndef EXIT_CONTROLLER_H
 #define EXIT_CONTROLLER_H
 
-#include <string>
 #include "UserCollection.h"
-
-using namespace std;
 
 /*
     class: ExitController

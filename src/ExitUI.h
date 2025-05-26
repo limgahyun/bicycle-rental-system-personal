@@ -1,7 +1,6 @@
 #ifndef EXIT_UI_H
 #define EXIT_UI_H
 
-#include <string>
 #include <fstream>
 #include "ExitController.h"
 
