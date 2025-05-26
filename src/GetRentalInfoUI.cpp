@@ -1,5 +1,4 @@
 #include "GetRentalInfoUI.h"
-#include <iostream>
 
 GetRentalInfoUI::GetRentalInfoUI(ofstream& outFile) : outputFile(outFile) {
     getRentalInfoController = new GetRentalInfoController();

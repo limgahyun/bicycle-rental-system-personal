@@ -1,5 +1,4 @@
 #include "RentBikeUI.h"
-#include <iostream>
 #include <sstream>
 
 RentBikeUI::RentBikeUI(ofstream& outFile) : outputFile(outFile) {

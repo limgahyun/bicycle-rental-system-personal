@@ -1,5 +1,4 @@
 #include "RegisterBikeUI.h"
-#include <iostream>
 #include <sstream>
 
 RegisterBikeUI::RegisterBikeUI(ofstream& outFile) : outputFile(outFile) {
