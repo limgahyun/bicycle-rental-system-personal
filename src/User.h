@@ -10,7 +10,10 @@ typedef enum {
     USER
 } Role;
 
-// User entity class 선언
+/*
+    class: User
+    description: 사용자 클래스
+*/
 class User {
 private:
     string userId;

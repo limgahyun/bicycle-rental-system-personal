@@ -16,6 +16,6 @@ void SignUpUI::requestSignUp(string input) {
         outputFile << "> " << id << " " << password << " " << phoneNumber << endl;
     } else {
         outputFile << "1.1. 회원가입" << endl;
-        outputFile << "> " << "Error: ID already exists" << endl;
+        outputFile << "> " << "signup failed" << endl;
     }
 } 

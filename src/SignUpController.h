@@ -7,6 +7,10 @@
 
 using namespace std;
 
+/*
+    class: SignUpController
+    description: 회원가입 기능을 제어하는 control 클래스
+*/
 class SignUpController {
 private:
     static vector<Member> members;  // 저장된 멤버

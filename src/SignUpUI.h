@@ -7,6 +7,10 @@
 
 using namespace std;
 
+/*
+    class: SignUpUI
+    description: 회원가입 UI 클래스
+*/
 class SignUpUI {
 private:
     SignUpController* signUpController;

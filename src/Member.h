@@ -6,6 +6,10 @@
 
 using namespace std;
 
+/*
+    class: Member
+    description: 회원 클래스
+*/
 class Member : public User {
 private:
     string phoneNumber;

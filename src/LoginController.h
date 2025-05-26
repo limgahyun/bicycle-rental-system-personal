@@ -6,7 +6,10 @@
 
 using namespace std;
 
-// LoginController control class 선언
+/*
+    class: LoginController
+    description: 로그인 기능을 제어하는 control 클래스
+*/
 class LoginController {
 private:
     User* currentUser;

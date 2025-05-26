@@ -7,7 +7,10 @@
 
 using namespace std;
 
-// LoginUI boundary class 선언
+/*
+    class: LoginUI
+    description: 로그인 UI 클래스
+*/
 class LoginUI {
 private:
     LoginController* loginController;
