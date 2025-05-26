@@ -1,5 +1,7 @@
 #include "LogoutController.h"
 
+LogoutController::LogoutController() {}
+
 /*
     함수 이름 : LogoutController::logout()
     기능	  : 현재 로그인된 사용자를 로그아웃
@@ -7,9 +9,10 @@
     반환값    : 로그아웃된 사용자의 ID (실패시 빈 문자열)
 */
 string LogoutController::logout() {
+    User* currentUser = UserCollection::getInstance()->getCurrentUser();
     if (currentUser != nullptr) {
-        string userId = currentUser->getId();  // userId 저장
-        currentUser = nullptr;
+        string userId = currentUser->getId();
+        UserCollection::getInstance()->logout();
         return userId;
     }
     return "";
