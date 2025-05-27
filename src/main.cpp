@@ -23,6 +23,12 @@ void cleanupSystem(ifstream& inputFile, ofstream& outputFile);
 void doTask(ifstream& inputFile, ofstream& outputFile, LoginUI* loginUI, SignUpUI* signUpUI, LogoutUI* logoutUI, 
             RentBikeUI* rentBikeUI, RegisterBikeUI* registerBikeUI, GetRentalInfoUI* getRentalInfoUI, ExitUI* exitUI);
 
+/*
+    함수 이름 : main()
+    기능	  : 프로그램 시작
+    전달 인자 : 없음
+    반환값    : 프로그램 종료 코드
+*/
 int main() {
     // File 입출력을 위한 스트림
     ifstream inputFile;
@@ -56,18 +62,36 @@ int main() {
     return 0;
 }
 
+/*
+    함수 이름 : initializeSystem()
+    기능	  : 파일 입출력을 위한 초기화
+    전달 인자 : 입력 파일 스트림, 출력 파일 스트림
+    반환값    : 없음
+*/
 void initializeSystem(ifstream& inputFile, ofstream& outputFile) {
     // 파일 입출력을 위한 초기화
     inputFile.open(INPUT_FILE_NAME);
     outputFile.open(OUTPUT_FILE_NAME);
 }
 
+/*
+    함수 이름 : cleanupSystem()
+    기능	  : 파일 입출력을 위한 정리
+    전달 인자 : 입력 파일 스트림, 출력 파일 스트림
+    반환값    : 없음
+*/
 void cleanupSystem(ifstream& inputFile, ofstream& outputFile) {
     // 파일 정리
     outputFile.close();
     inputFile.close();
 }
 
+/*
+    함수 이름 : doTask()
+    기능	  : 메뉴 파싱을 위한 처리
+    전달 인자 : 입력 파일 스트림, 출력 파일 스트림, LoginUI, SignUpUI, LogoutUI, RentBikeUI, RegisterBikeUI, GetRentalInfoUI, ExitUI
+    반환값    : 없음
+*/
 void doTask(ifstream& inputFile, ofstream& outputFile, LoginUI* loginUI, SignUpUI* signUpUI, LogoutUI* logoutUI, 
             RentBikeUI* rentBikeUI, RegisterBikeUI* registerBikeUI, GetRentalInfoUI* getRentalInfoUI, ExitUI* exitUI) {
     // 메뉴 파싱을 위한 level 구분을 위한 변수

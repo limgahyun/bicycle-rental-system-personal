@@ -5,6 +5,7 @@
 
 using namespace std;
 
+// role enum
 typedef enum {
     ADMIN,
     USER

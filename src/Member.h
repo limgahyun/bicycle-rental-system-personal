@@ -15,7 +15,6 @@ private:
     string phoneNumber;
 
 public:
-    Member();
     Member(string id, string password, string phoneNumber);
 };
 
