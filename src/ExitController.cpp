@@ -10,8 +10,9 @@ ExitController::ExitController() {}
 */
 void ExitController::exit() {
     // 현재 로그인된 사용자가 있다면 로그아웃
-    User* currentUser = UserCollection::getInstance()->getCurrentUser();
+    UserCollection* userCollection = UserCollection::getInstance();
+    User* currentUser = userCollection->getCurrentUser();
     if (currentUser != nullptr) {
-        UserCollection::getInstance()->logout();
+        userCollection->logout();
     }
 } 
