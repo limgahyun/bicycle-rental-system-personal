@@ -12,11 +12,13 @@ using namespace std;
     description: 자전거 등록을 위한 control 클래스
 */
 class RegisterBikeController {
+private:
+    bool isDuplicatedId(string bikeId);
+    void addNewBike(string bikeId, string bikeName);
+
 public:
     RegisterBikeController();
     bool registerBike(string bikeId, string bikeName);
-    bool isDuplicatedId(string bikeId);
-    void addNewBike(string bikeId, string bikeName);
 };
 
 #endif 
