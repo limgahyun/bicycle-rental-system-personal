@@ -15,11 +15,11 @@ using namespace std;
 class RentBikeController {
 private:
     static vector<Bike*> bikes;  // 자전거 목록
+    bool isRentalAvailable(string bikeId);
 
 public:
     RentBikeController();
     bool rentBike(string bikeId);
-    bool isRentalAvailable(string bikeId);
     static void addBike(Bike* bike);  // 자전거 추가 (테스트용)
     static Bike* findBikeById(const string& bikeId);
     static const vector<Bike*>& getBikes() { return bikes; }  // 자전거 목록 조회
