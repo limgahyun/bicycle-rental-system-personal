@@ -13,8 +13,7 @@ using namespace std;
 class SignUpController {
 public:
     SignUpController();
-    bool isDuplicated(string id);
-    void addNewMember(string id, string password, string phoneNumber);
+    bool addNewMember(string id, string password, string phoneNumber);
 };
 
 #endif
