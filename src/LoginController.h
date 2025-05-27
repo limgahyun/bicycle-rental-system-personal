@@ -14,7 +14,6 @@ class LoginController {
 public:
     LoginController();
     bool login(string id, string password);
-    User* getCurrentUser() const;
 };
 
 #endif

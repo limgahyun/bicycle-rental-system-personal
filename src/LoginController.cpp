@@ -11,13 +11,3 @@ LoginController::LoginController() {}
 bool LoginController::login(string id, string password) {
     return UserCollection::getInstance()->login(id, password);
 }
-
-/*
-    함수 이름 : LoginController::getCurrentUser()
-    기능	  : 현재 로그인한 사용자 반환
-    전달 인자 : 없음
-    반환값    : 현재 로그인한 사용자
-*/
-User* LoginController::getCurrentUser() const {
-    return UserCollection::getInstance()->getCurrentUser();
-}
