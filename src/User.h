@@ -29,7 +29,6 @@ public:
     bool checkPassword(string password) const;
     bool isDuplicted(string id);
     void setLoggedIn(bool status);
-    bool getLoggedIn() const;
     string getId() const;
 };
 

@@ -37,16 +37,6 @@ void User::setLoggedIn(bool status) {
 }
 
 /*
-	함수 이름 : User::getLoggedIn()
-	기능	 : 로그인 상태 반환
-	전달 인자 : 없음
-	반환값    : 로그인 상태
-*/
-bool User::getLoggedIn() const {
-    return isLoggedIn;
-}
-
-/*
 	함수 이름 : User::getId()
 	기능	 : 해당 user의 id 반환
 	전달 인자 : 없음
