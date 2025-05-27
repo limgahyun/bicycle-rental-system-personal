@@ -9,10 +9,11 @@ LogoutController::LogoutController() {}
     반환값    : 로그아웃된 사용자의 ID (실패시 빈 문자열)
 */
 string LogoutController::logout() {
-    User* currentUser = UserCollection::getInstance()->getCurrentUser();
+    UserCollection* userCollection = UserCollection::getInstance();
+    User* currentUser = userCollection->getCurrentUser();
     if (currentUser != nullptr) {
         string userId = currentUser->getId();
-        UserCollection::getInstance()->logout();
+        userCollection->logout();
         return userId;
     }
     return "";
