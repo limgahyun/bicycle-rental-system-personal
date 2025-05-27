@@ -17,7 +17,7 @@ private:
     ofstream& outputFile;
 
 public:
-    RentBikeUI(ofstream& outFile);
+    RentBikeUI(ofstream& outputFile);
     void requestRental(string input);
 };
 

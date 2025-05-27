@@ -6,7 +6,7 @@
     전달 인자 : 출력 파일 스트림
     반환값    : 없음
 */
-LogoutUI::LogoutUI(ofstream& outFile) : outputFile(outFile) {
+LogoutUI::LogoutUI(ofstream& outputFile) : outputFile(outputFile) {
     logoutController = new LogoutController();
 }
 

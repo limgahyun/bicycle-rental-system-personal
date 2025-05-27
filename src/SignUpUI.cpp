@@ -1,7 +1,7 @@
 #include "SignUpUI.h"
 #include <sstream>
 
-SignUpUI::SignUpUI(ofstream& outFile) : outputFile(outFile) {}
+SignUpUI::SignUpUI(ofstream& outputFile) : outputFile(outputFile) {}
 
 /*
     함수 이름 : SignUpUI::requestSignUp()

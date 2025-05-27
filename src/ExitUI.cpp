@@ -1,6 +1,6 @@
 #include "ExitUI.h"
 
-ExitUI::ExitUI(ofstream& outFile) : outputFile(outFile) {
+ExitUI::ExitUI(ofstream& outputFile) : outputFile(outputFile) {
     exitController = new ExitController();
 }
 

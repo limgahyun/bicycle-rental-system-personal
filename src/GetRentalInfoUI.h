@@ -17,7 +17,7 @@ private:
     ofstream& outputFile;
 
 public:
-    GetRentalInfoUI(ofstream& outFile);
+    GetRentalInfoUI(ofstream& outputFile);
     void requestRentalInfoList();
 };
 

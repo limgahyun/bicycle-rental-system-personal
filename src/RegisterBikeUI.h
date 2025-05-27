@@ -17,7 +17,7 @@ private:
     ofstream& outputFile;
 
 public:
-    RegisterBikeUI(ofstream& outFile);
+    RegisterBikeUI(ofstream& outputFile);
     void requestRegisterBike(string input);
 };
 

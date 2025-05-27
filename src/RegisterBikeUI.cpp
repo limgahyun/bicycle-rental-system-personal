@@ -1,7 +1,7 @@
 #include "RegisterBikeUI.h"
 #include <sstream>
 
-RegisterBikeUI::RegisterBikeUI(ofstream& outFile) : outputFile(outFile) {
+RegisterBikeUI::RegisterBikeUI(ofstream& outputFile) : outputFile(outputFile) {
     registerBikeController = new RegisterBikeController();
 }
 

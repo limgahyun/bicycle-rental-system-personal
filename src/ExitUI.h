@@ -16,7 +16,7 @@ private:
     ofstream& outputFile;
 
 public:
-    ExitUI(ofstream& outFile);
+    ExitUI(ofstream& outputFile);
     void requestExit();
 };
 

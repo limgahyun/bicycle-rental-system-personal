@@ -1,7 +1,7 @@
 #include "RentBikeUI.h"
 #include <sstream>
 
-RentBikeUI::RentBikeUI(ofstream& outFile) : outputFile(outFile) {
+RentBikeUI::RentBikeUI(ofstream& outputFile) : outputFile(outputFile) {
     rentBikeController = new RentBikeController();
 }
 
