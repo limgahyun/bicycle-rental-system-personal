@@ -10,7 +10,7 @@ SignUpController::SignUpController() {}
 */
 bool SignUpController::addNewMember(string id, string password, string phoneNumber) {
     UserCollection* userCollection = UserCollection::getInstance();
-    if (userCollection->findMemberById(id) == nullptr) {
+    if (userCollection->findMemberById(id) != nullptr) {
         return false;
     }
 

@@ -17,7 +17,6 @@ private:
 public:
     Member();
     Member(string id, string password, string phoneNumber);
-    string getPhoneNumber() const;
 };
 
 #endif 
